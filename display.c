@@ -45,7 +45,7 @@ void draw_number(int num, int x, int y) {
     }
     else {
         clear_display();
-        printf("number outside of range!")
+        printf("number outside of range!");
     }
 }
 
