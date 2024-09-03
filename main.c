@@ -1,6 +1,6 @@
 #include "timer.h"
 
-int state = 0, presses = 0;
+int STATE = 0, PRESSES = 0;
 
 void handler(unsigned int code);
 
@@ -8,19 +8,23 @@ int main(void) {
     open_input();
     open_display();
     clear_display();
-    while (presses < 3) {
-
-        if (presses > 0) {
-            presses = presses - 1;
-        }
-
-        if (state == 0) {
+    while (PRESSES < 2) {
+        if (STATE == 0) {
             display_colons();
             display_hour(0, , );
             display_minutes(0, 0, , , );
             sleep(1);
             clear_display();
             sleep(1);
+        }
+        if (STATE == 1) {
+            display_colons();
+            display_hour(hr, xhr, y);
+            display_minutes(m1, m2, xm1, xm2, y);
+            sleep(1);
+            clear_display();
+            sleep(1);
+
         }
     }
     clear_display();
@@ -30,8 +34,9 @@ int main(void) {
 }
 
 void handler(unsigned int code) {
-	if (code == 28) {
-		state++;
-        presses++;
-	}
+    if (STATE == 0 || STATE == 1) {
+        if (code == 28) {
+            STATE++;
+        }
+    }
 }
