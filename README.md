@@ -1,6 +1,9 @@
 # study-timer
 This study timer will use the Raspberry Pi, the SenseHAT, and senselib by Professor Andrew Roosen of the University of Delaware.
 
+# current functionality "flow"
+  ![functionality](Screenshot 2024-09-03 000814.png)
+
 # how to compile
 
 # how to run
