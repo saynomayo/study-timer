@@ -6,7 +6,7 @@ void open_display(void);
 void close_display(void);
 void clear_display(void);
 
-void draw_number(int num, int x, int y);
+void draw_number(int number, int x, int y);
 
 void display_hour1(int h1, int xh1, int yh);
 void display_hour2(int h2, int xh2, int yh);
