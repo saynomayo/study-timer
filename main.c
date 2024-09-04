@@ -1,6 +1,6 @@
 #include "timer.h"
 
-int STATE = 0, PRESSES = 0, RUN = 1, NUM=0;
+int STATE = 0, PRESSES = 0, RUN = 1
 
 void handler(unsigned int code);
 
@@ -10,7 +10,7 @@ int main(void) {
     while (RUN) {
         clear_display();
         check_input(handler, 100);
-        draw_number(NUM, 0, 0);
+        draw_number(0, 0, 0);
     }
     close_input();
     close_display();
