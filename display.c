@@ -112,7 +112,7 @@ void draw_number(int num, int x, int y) {
         bm->pixel[2+x][3+y]=WHITE;
         bm->pixel[1+x][0+y]=WHITE;
         bm->pixel[1+x][3+y]=WHITE;
-        bm->pixel[1+x][1+y]=WHITE
+        bm->pixel[1+x][1+y]=WHITE;
     }
     if (num == 9) {
         bm->pixel[0+x][0+y]=WHITE;
@@ -127,7 +127,6 @@ void draw_number(int num, int x, int y) {
         bm->pixel[1+x][3+y]=WHITE;    
     }
     else {
-        clear_display();
         printf("number outside of range!");
     }
 }
