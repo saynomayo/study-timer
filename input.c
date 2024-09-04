@@ -1,6 +1,6 @@
 
 #include "sense.h"
-#include "scroll.h"
+#include "timer.h"
 #include <linux/input.h>
 #include <stdio.h>
 

@@ -1,4 +1,4 @@
-#include "scroll.h"
+#include "timer.h"
 #include <unistd.h>
 #include <stdio.h>
 #include "sense.h"
@@ -18,30 +18,113 @@ void open_display(void) {
 
 void draw_number(int num, int x, int y) {
     if (num == 0) {
-
+        bm->pixel[0+x][0+y]=WHITE;
+        bm->pixel[0+x][1+y]=WHITE;
+        bm->pixel[0+x][2+y]=WHITE;
+        bm->pixel[0+x][3+y]=WHITE;
+        bm->pixel[2+x][0+y]=WHITE;
+        bm->pixel[2+x][1+y]=WHITE;
+        bm->pixel[2+x][2+y]=WHITE;
+        bm->pixel[2+x][3+y]=WHITE;
+        bm->pixel[1+x][0+y]=WHITE;
+        bm->pixel[1+x][3+y]=WHITE;
     }
     if (num == 1) {
-
+        bm->pixel[0+x][1+y]=WHITE;
+        bm->pixel[0+x][2+y]=WHITE;
+        bm->pixel[0+x][3+y]=WHITE;
+        bm->pixel[0+x][4+y]=WHITE;
+        bm->pixel[1+x][0+y]=WHITE;
+    }
+    if (num == 2) {
+        bm->pixel[0+x][0+y]=WHITE;
+        bm->pixel[0+x][1+y]=WHITE;
+        bm->pixel[0+x][3+y]=WHITE;
+        bm->pixel[1+x][0+y]=WHITE;
+        bm->pixel[1+x][2+y]=WHITE;
+        bm->pixel[1+x][3+y]=WHITE;
+        bm->pixel[2+x][0+y]=WHITE;
+        bm->pixel[2+x][2+y]=WHITE;
+        bm->pixel[2+x][3+y]=WHITE;
     }
     if (num == 3) {
-
+        bm->pixel[0+x][0+y]=WHITE;
+        bm->pixel[0+x][1+y]=WHITE;
+        bm->pixel[0+x][2+y]=WHITE;
+        bm->pixel[0+x][3+y]=WHITE;
+        bm->pixel[1+x][0+y]=WHITE;
+        bm->pixel[1+x][1+y]=WHITE;
+        bm->pixel[1+x][3+y]=WHITE;
+        bm->pixel[2+x][0+y]=WHITE;
+        bm->pixel[2+x][3+y]=WHITE;
     }
     if (num == 4) {
-
+        bm->pixel[0+x][0+y]=WHITE;
+        bm->pixel[0+x][1+y]=WHITE;
+        bm->pixel[0+x][2+y]=WHITE;
+        bm->pixel[0+x][3+y]=WHITE;
+        bm->pixel[1+x][2+y]=WHITE;
+        bm->pixel[2+x][0+y]=WHITE;
+        bm->pixel[2+x][1+y]=WHITE;
+        bm->pixel[2+x][3+y]=WHITE;
     }
     if (num == 5) {
+        bm->pixel[0+x][0+y]=WHITE;
+        bm->pixel[0+x][2+y]=WHITE;
+        bm->pixel[0+x][3+y]=WHITE;
+        bm->pixel[1+x][0+y]=WHITE;
+        bm->pixel[1+x][1+y]=WHITE;
+        bm->pixel[1+x][3+y]=WHITE;
+        bm->pixel[2+x][0+y]=WHITE;
+        bm->pixel[2+x][1+y]=WHITE;
+        bm->pixel[2+x][3+y]=WHITE;
     }
     if (num == 6) {
+        bm->pixel[0+x][0+y]=WHITE;
+        bm->pixel[0+x][2+y]=WHITE;
+        bm->pixel[0+x][3+y]=WHITE;
+        bm->pixel[1+x][0+y]=WHITE;
+        bm->pixel[1+x][2+y]=WHITE;
+        bm->pixel[1+x][3+y]=WHITE;
+        bm->pixel[2+x][0+y]=WHITE;
+        bm->pixel[2+x][1+y]=WHITE;
+        bm->pixel[2+x][2+y]=WHITE;
+        bm->pixel[2+x][3+y]=WHITE;
 
     }
     if (num == 7) {
-
+        bm->pixel[0+x][0+y]=WHITE;
+        bm->pixel[0+x][1+y]=WHITE;
+        bm->pixel[0+x][2+y]=WHITE;
+        bm->pixel[0+x][3+y]=WHITE;
+        bm->pixel[2+x][0+y]=WHITE;
+        bm->pixel[1+x][2+y]=WHITE;
+        bm->pixel[1+x][0+y]=WHITE;
     }
     if (num == 8) {
-
+        bm->pixel[0+x][0+y]=WHITE;
+        bm->pixel[0+x][1+y]=WHITE;
+        bm->pixel[0+x][2+y]=WHITE;
+        bm->pixel[0+x][3+y]=WHITE;
+        bm->pixel[2+x][0+y]=WHITE;
+        bm->pixel[2+x][1+y]=WHITE;
+        bm->pixel[2+x][2+y]=WHITE;
+        bm->pixel[2+x][3+y]=WHITE;
+        bm->pixel[1+x][0+y]=WHITE;
+        bm->pixel[1+x][3+y]=WHITE;
+        bm->pixel[1+x][1+y]=WHITE
     }
     if (num == 9) {
-
+        bm->pixel[0+x][0+y]=WHITE;
+        bm->pixel[0+x][1+y]=WHITE;
+        bm->pixel[0+x][2+y]=WHITE;
+        bm->pixel[0+x][3+y]=WHITE;
+        bm->pixel[2+x][0+y]=WHITE;
+        bm->pixel[2+x][1+y]=WHITE;
+        bm->pixel[1+x][1+y]=WHITE;
+        bm->pixel[2+x][3+y]=WHITE;
+        bm->pixel[1+x][0+y]=WHITE;
+        bm->pixel[1+x][3+y]=WHITE;    
     }
     else {
         clear_display();
@@ -64,6 +147,10 @@ void display_minute2(int m2, int xm2, int y) {
 void display_minutes(int m1, int m2, int xm1, int xm2, int y) {
     display_minute1(m1, xm1, y);
     display_minute2(m2, xm2, y);
+}
+void display_colons(void) {
+    bm->pixel[0][1]=WHITE;
+    bm->pixel[0][3]=WHITE;
 }
 
 void close_display(void) {

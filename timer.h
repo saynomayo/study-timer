@@ -8,10 +8,14 @@ void clear_display(void);
 
 void draw_number(int num, int x, int y);
 
-void display_hour(int hour, int xhour, int y);
-void display_minute1(int m1, int xm1, int y);
-void display_minute2(int m2, int xm2, int y);
-void display_minutes(int m1, int m2, int xm1, int xm2, int y);
+void display_hour1(int h1, int xh1, int yh);
+void display_hour2(int h2, int xh2, int yh);
+void display_hours(int h1, int h2, int xh1, int xh2, int yh);
+
+void display_minute1(int m1, int xm1, int yx);
+void display_minute2(int m2, int xm2, int yx);
+void display_minutes(int m1, int m2, int xm1, int xm2, int yx);
+
 void display_colons(void);
 
 
