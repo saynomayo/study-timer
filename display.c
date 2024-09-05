@@ -6,9 +6,11 @@
 
 #define BLACK 0x0000
 #define WHITE 0xFFFF
+#define RED 0xF000
 
 pi_framebuffer_t *fb=NULL;
 sense_fb_bitmap_t *bm=NULL;
+
 
 void open_display(void) {
 	fb=getFrameBuffer();
@@ -20,114 +22,114 @@ void draw_number(int number, int x, int y) {
 	switch(number) 
 	{
 	case 0:
-	        bm->pixel[0+x][0+y]=WHITE;
-	        bm->pixel[0+x][1+y]=WHITE;
-	        bm->pixel[0+x][2+y]=WHITE;
-	        bm->pixel[0+x][3+y]=WHITE;
-	        bm->pixel[2+x][0+y]=WHITE;
-	        bm->pixel[2+x][1+y]=WHITE;
-	        bm->pixel[2+x][2+y]=WHITE;
-	        bm->pixel[2+x][3+y]=WHITE;
-	        bm->pixel[1+x][0+y]=WHITE;
-	        bm->pixel[1+x][3+y]=WHITE;
+	        bm->pixel[1+x][0+y]=RED;
+	        bm->pixel[1+x][1+y]=RED;
+	        bm->pixel[1+x][2+y]=RED;
+	        bm->pixel[1+x][3+y]=RED;
+	        bm->pixel[3+x][0+y]=RED;
+	        bm->pixel[3+x][1+y]=RED;
+	        bm->pixel[3+x][2+y]=RED;
+	        bm->pixel[3+x][3+y]=RED;
+	        bm->pixel[2+x][0+y]=RED;
+	        bm->pixel[2+x][3+y]=RED;
 		break;
-	case 1;
-	        bm->pixel[0+x][1+y]=WHITE;
-	        bm->pixel[0+x][2+y]=WHITE;
-	        bm->pixel[0+x][3+y]=WHITE;
-	        bm->pixel[0+x][4+y]=WHITE;
-	        bm->pixel[1+x][0+y]=WHITE;
+	case 1:
+	        bm->pixel[2+x][0+y]=RED;
+	        bm->pixel[2+x][1+y]=RED;
+	        bm->pixel[2+x][2+y]=RED;
+	        bm->pixel[2+x][3+y]=RED;
+	        bm->pixel[3+x][1+y]=RED;
 	    	break;
 	case 2:
-	        bm->pixel[0+x][0+y]=WHITE;
-	        bm->pixel[0+x][1+y]=WHITE;
-	        bm->pixel[0+x][3+y]=WHITE;
-	        bm->pixel[1+x][0+y]=WHITE;
-	        bm->pixel[1+x][2+y]=WHITE;
-	        bm->pixel[1+x][3+y]=WHITE;
-	        bm->pixel[2+x][0+y]=WHITE;
-	        bm->pixel[2+x][2+y]=WHITE;
-	        bm->pixel[2+x][3+y]=WHITE;
+	        bm->pixel[1+x][0+y]=RED;
+	        bm->pixel[1+x][1+y]=RED;
+	        bm->pixel[1+x][3+y]=RED;
+	        bm->pixel[2+x][0+y]=RED;
+	        bm->pixel[2+x][2+y]=RED;
+	        bm->pixel[2+x][3+y]=RED;
+	        bm->pixel[3+x][0+y]=RED;
+	        bm->pixel[3+x][2+y]=RED;
+	        bm->pixel[3+x][3+y]=RED;
 		break;
-	case 3;
-	        bm->pixel[0+x][0+y]=WHITE;
-	        bm->pixel[0+x][1+y]=WHITE;
-	        bm->pixel[0+x][2+y]=WHITE;
-	        bm->pixel[0+x][3+y]=WHITE;
-	        bm->pixel[1+x][0+y]=WHITE;
-	        bm->pixel[1+x][1+y]=WHITE;
-	        bm->pixel[1+x][3+y]=WHITE;
-	        bm->pixel[2+x][0+y]=WHITE;
-	        bm->pixel[2+x][3+y]=WHITE;
+	case 3:
+	        bm->pixel[1+x][0+y]=RED;
+	        bm->pixel[1+x][1+y]=RED;
+	        bm->pixel[1+x][2+y]=RED;
+	        bm->pixel[1+x][3+y]=RED;
+	        bm->pixel[2+x][0+y]=RED;
+	        bm->pixel[2+x][1+y]=RED;
+	        bm->pixel[2+x][3+y]=RED;
+	        bm->pixel[3+x][0+y]=RED;
+	        bm->pixel[3+x][3+y]=RED;
 		break;
-	case 4;
-	        bm->pixel[0+x][0+y]=WHITE;
-	        bm->pixel[0+x][1+y]=WHITE;
-	        bm->pixel[0+x][2+y]=WHITE;
-	        bm->pixel[0+x][3+y]=WHITE;
-	        bm->pixel[1+x][2+y]=WHITE;
-	        bm->pixel[2+x][0+y]=WHITE;
-	        bm->pixel[2+x][1+y]=WHITE;
-	        bm->pixel[2+x][3+y]=WHITE;
+	case 4:
+	        bm->pixel[1+x][0+y]=RED;
+	        bm->pixel[1+x][1+y]=RED;
+	        bm->pixel[1+x][2+y]=RED;
+	        bm->pixel[1+x][3+y]=RED;
+	        bm->pixel[2+x][2+y]=RED;
+	        bm->pixel[3+x][0+y]=RED;
+	        bm->pixel[3+x][1+y]=RED;
+	        bm->pixel[3+x][2+y]=RED;
 		break;
-	case 5;
-	        bm->pixel[0+x][0+y]=WHITE;
-	        bm->pixel[0+x][2+y]=WHITE;
-	        bm->pixel[0+x][3+y]=WHITE;
-	        bm->pixel[1+x][0+y]=WHITE;
-	        bm->pixel[1+x][1+y]=WHITE;
-	        bm->pixel[1+x][3+y]=WHITE;
-	        bm->pixel[2+x][0+y]=WHITE;
-	        bm->pixel[2+x][1+y]=WHITE;
-	        bm->pixel[2+x][3+y]=WHITE;
+	case 5:
+	        bm->pixel[1+x][0+y]=RED;
+	        bm->pixel[1+x][2+y]=RED;
+	        bm->pixel[1+x][3+y]=RED;
+	        bm->pixel[2+x][0+y]=RED;
+	        bm->pixel[2+x][1+y]=RED;
+	        bm->pixel[2+x][3+y]=RED;
+	        bm->pixel[3+x][0+y]=RED;
+	        bm->pixel[3+x][1+y]=RED;
+	        bm->pixel[3+x][3+y]=RED;
 		break;
-	case 6;
-	        bm->pixel[0+x][0+y]=WHITE;
-	        bm->pixel[0+x][2+y]=WHITE;
-	        bm->pixel[0+x][3+y]=WHITE;
-	        bm->pixel[1+x][0+y]=WHITE;
-	        bm->pixel[1+x][2+y]=WHITE;
-	        bm->pixel[1+x][3+y]=WHITE;
-	        bm->pixel[2+x][0+y]=WHITE;
-	        bm->pixel[2+x][1+y]=WHITE;
-	        bm->pixel[2+x][2+y]=WHITE;
-	        bm->pixel[2+x][3+y]=WHITE;
+	case 6:
+	        bm->pixel[1+x][0+y]=RED;
+	        bm->pixel[1+x][2+y]=RED;
+	        bm->pixel[1+x][3+y]=RED;
+	        bm->pixel[2+x][0+y]=RED;
+	        bm->pixel[2+x][2+y]=RED;
+	        bm->pixel[2+x][3+y]=RED;
+	        bm->pixel[3+x][0+y]=RED;
+	        bm->pixel[3+x][1+y]=RED;
+	        bm->pixel[3+x][2+y]=RED;
+	        bm->pixel[3+x][3+y]=RED;
 		break;
-	case 7;
-	        bm->pixel[0+x][0+y]=WHITE;
-	        bm->pixel[0+x][1+y]=WHITE;
-	        bm->pixel[0+x][2+y]=WHITE;
-	        bm->pixel[0+x][3+y]=WHITE;
-	        bm->pixel[2+x][0+y]=WHITE;
-	        bm->pixel[1+x][2+y]=WHITE;
-	        bm->pixel[1+x][0+y]=WHITE;
+	case 7:
+	        bm->pixel[1+x][0+y]=RED;
+	        bm->pixel[1+x][1+y]=RED;
+	        bm->pixel[1+x][2+y]=RED;
+	        bm->pixel[1+x][3+y]=RED;
+	        bm->pixel[3+x][0+y]=RED;
+	        bm->pixel[2+x][2+y]=RED;
+	        bm->pixel[2+x][0+y]=RED;
 		break;
-	case 8;
-	        bm->pixel[0+x][0+y]=WHITE;
-	        bm->pixel[0+x][1+y]=WHITE;
-	        bm->pixel[0+x][2+y]=WHITE;
-	        bm->pixel[0+x][3+y]=WHITE;
-	        bm->pixel[2+x][0+y]=WHITE;
-	        bm->pixel[2+x][1+y]=WHITE;
-	        bm->pixel[2+x][2+y]=WHITE;
-	        bm->pixel[2+x][3+y]=WHITE;
-	        bm->pixel[1+x][0+y]=WHITE;
-	        bm->pixel[1+x][3+y]=WHITE;
-	        bm->pixel[1+x][1+y]=WHITE;
+	case 8:
+	        bm->pixel[1+x][0+y]=RED;
+	        bm->pixel[1+x][1+y]=RED;
+	        bm->pixel[1+x][2+y]=RED;
+	        bm->pixel[1+x][3+y]=RED;
+	        bm->pixel[3+x][0+y]=RED;
+	        bm->pixel[3+x][1+y]=RED;
+	        bm->pixel[3+x][2+y]=RED;
+	        bm->pixel[3+x][3+y]=RED;
+	        bm->pixel[2+x][0+y]=RED;
+	        bm->pixel[2+x][3+y]=RED;
+	        bm->pixel[2+x][1+y]=RED;
 		break;
-	case 9;
-	        bm->pixel[0+x][0+y]=WHITE;
-	        bm->pixel[0+x][1+y]=WHITE;
-	        bm->pixel[0+x][2+y]=WHITE;
-	        bm->pixel[0+x][3+y]=WHITE;
-	        bm->pixel[2+x][0+y]=WHITE;
-	        bm->pixel[2+x][1+y]=WHITE;
-	        bm->pixel[1+x][1+y]=WHITE;
-	        bm->pixel[2+x][3+y]=WHITE;
-	        bm->pixel[1+x][0+y]=WHITE;
-	        bm->pixel[1+x][3+y]=WHITE;   
+	case 9:
+	        bm->pixel[1+x][0+y]=RED;
+	        bm->pixel[1+x][1+y]=RED;
+	        bm->pixel[1+x][2+y]=RED;
+	        bm->pixel[1+x][3+y]=RED;
+	        bm->pixel[3+x][0+y]=RED;
+	        bm->pixel[3+x][1+y]=RED;
+	        bm->pixel[2+x][1+y]=RED;
+	        bm->pixel[3+x][3+y]=RED;
+	        bm->pixel[2+x][0+y]=RED;
+	        bm->pixel[2+x][3+y]=RED;   
 		break;
-	default;
+	default:
         printf("number outside of range!");
     	}
 	printf("chosen number is %d\n", number);

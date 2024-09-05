@@ -24,7 +24,9 @@ void increase_time(void);
 void decrease_time(void);
 void timer_blinks(void);
 
+void open_magnet(void);
+void check_magnet(void);
 
-void open_input(void);
-void check_input(void (*)(unsigned int code), int delay);
-void close_input(void);
+void open_joystick(void);
+void check_joystick(void (*)(unsigned int code), int delay);
+void close_joystick(void);

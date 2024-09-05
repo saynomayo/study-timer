@@ -6,11 +6,11 @@
 
 pi_joystick_t *joystick = NULL;
 
-void open_input(void) {
+void open_joystick(void) {
 	joystick = getJoystickDevice();
 }
 
-void close_input(void) {
+void close_joystick(void) {
 	if (joystick != NULL) {
 		freeJoystick(joystick);
 		joystick = NULL;
@@ -20,6 +20,6 @@ void close_input(void) {
 	}
 }
 
-void check_input(void (*callback)(unsigned int code), int delay) {
+void check_joystick(void (*callback)(unsigned int code), int delay) {
 	pollJoystick(joystick,callback,delay);
 }
