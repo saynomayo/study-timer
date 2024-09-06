@@ -33,7 +33,7 @@ int main(void) {
             }
         }
         if (m2==10) {
-            m2==0;
+            m2=0;
             if (m1<10) {
                 m1++;
             }
@@ -76,7 +76,7 @@ void joystick_handler(unsigned int code) {
 void SET_TIME_STATE(void) {
     //CURRENTLY TAKES DOUBLE INPUT INSTEAD OF INTENDED SINGLE INPUT
     //ALSO, WHEN m2 = 10, it does NOT set back to zero, so m1 increments repeatedly
-    check_joystick(joystick_handler, 1000);
+    check_joystick(joystick_handler, 200);
     clear_display();
     display_colons(WHITE);
     draw_number(m2, 0, 0, YELLOW);
