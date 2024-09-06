@@ -6,9 +6,9 @@ void open_display(void);
 void close_display(void);
 void clear_display(void);
 
-void draw_number(int number, int x, int y);
+void draw_number(int number, int x, int y, int color);
 
-void display_colons(void);
+void display_colons(int color);
 
 
 void run_timer(void);
