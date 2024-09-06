@@ -59,11 +59,10 @@ void joystick_handler(unsigned int code) {
 void SET_TIME_STATE(void) {
     check_joystick(joystick_handler, 100);
     clear_display();
-    usleep(550000);
     display_colons();
     draw_number(h2, 0, 0);
     draw_number(h1, 4, 0);
     draw_number(m2, -1, 4);
     draw_number(m1, 3, 4);
-    usleep(550000);
+    sleep(1);
 }
