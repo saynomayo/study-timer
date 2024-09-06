@@ -20,25 +20,25 @@ int main(void) {
     open_display();
     open_joystick();
     while (RUN) {
-        if (s2==10) {
+        if (s2>9) {
             s2=0;
             if (s1<7) {
                 s1++;
             }
         }
-        if (s1==6) {
+        if (s1>5) {
             s1=0;
             if (m1<10) {
                 m2++;
             }
         }
-        if (m2==10) {
+        if (m2>9) {
             m2=0;
             if (m1<10) {
                 m1++;
             }
         }
-        if (m1==10) {
+        if (m1>9) {
             m1=0;
             m1=0;
             s1=0;
@@ -76,12 +76,12 @@ void joystick_handler(unsigned int code) {
 void SET_TIME_STATE(void) {
     //CURRENTLY TAKES DOUBLE INPUT INSTEAD OF INTENDED SINGLE INPUT
     //ALSO, WHEN m2 = 10, it does NOT set back to zero, so m1 increments repeatedly
-    check_joystick(joystick_handler, 200);
+    check_joystick(joystick_handler, 1);
     clear_display();
     display_colons(WHITE);
     draw_number(m2, 0, 0, YELLOW);
     draw_number(m1, 4, 0, YELLOW);
     draw_number(s2, -1, 4, BLUE);
     draw_number(s1, 3, 4, BLUE);
-    sleep(1);
+    usleep(25000);
 }
