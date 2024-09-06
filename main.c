@@ -40,7 +40,6 @@ int main(void) {
         }
         if (STATE<2) {
             SET_TIME_STATE();
-            m2++;
         }
     }
     close_joystick();
