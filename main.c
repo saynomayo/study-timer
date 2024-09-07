@@ -100,8 +100,20 @@ void SET_TIME_STATE(void) {
 }
 
 void TIMER_COUNTS_DOWN(int theme) {
-     check_joystick(joystick_handler, 100);
-     if (theme==0)
+     if (m1==0 && m2==0 && s1==0 && s2==0) {
+        check_joystick(joystick_handler, 1000);
+        clear_display();
+        usleep(100000);
+        display_colons(WHITE);
+        draw_number(m2, 0, 0, WHITE);
+        draw_number(m1, 4, 0, WHITE);
+        draw_number(s2, -1, 4, WHITE);
+        draw_number(s1, 3, 4, WHITE);
+        usleep(100000);
+     }
+     else {
+        check_joystick(joystick_handler, 1000);
+        if (theme==0)
      {
         clear_display();
         //default theme (UDel babyyy)
@@ -121,8 +133,11 @@ void TIMER_COUNTS_DOWN(int theme) {
         draw_number(s2, -1, 4, WHITE);
         draw_number(s1, 3, 4, WHITE);
      }
-     s2--;
+     if(s2!=0) { 
+        s2--;
+     }
      usleep(100000);
+     }
 }
 
 void handle_wrapping(void) {
