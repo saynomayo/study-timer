@@ -1,5 +1,5 @@
-INCLUDE := -I ~/include
-LDFLAGS := -L ~/lib -lsense -lm
+INCLUDE := -I libsense
+LDFLAGS := -L lib -lsense -lm
 
 all: timer
 
