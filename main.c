@@ -81,7 +81,7 @@ void joystick_handler(unsigned int code) {
 void SET_TIME_STATE(void) {
     check_joystick(joystick_handler, 1);
     clear_display();
-    display_colons(WHITE);
+    display_colons(LOWRED);
     draw_number(m2, 0, 0, PEACH);
     draw_number(m1, 4, 0, PEACH);
     draw_number(s2, -1, 4, BLUSH);
