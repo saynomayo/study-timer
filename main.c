@@ -1,7 +1,7 @@
 #include "timer.h"
 //EVENT LOOP
 int STATE = 0, RUN = 1;
-
+int THEME = 0, STYLE = 0;
 //SOLID COLORS
 #define BLACK 0x0000
 #define WHITE 0xFFFF
@@ -29,6 +29,7 @@ void handle_wrapping(void);
 void SET_TIME_STATE(void);
 void TIMER_ON_STATE(void);
 void TIMER_PAUSE_STATE(void);
+void TIMER_COUNTS_DOWN(int theme);
 
 int main(void) {
     open_display();
@@ -37,6 +38,9 @@ int main(void) {
         handle_wrapping();
         if (STATE<2) {
             SET_TIME_STATE();
+        }
+        if (STATE==2) {
+            TIMER_COUNTS_DOWN(THEME);
         }
     }
     close_joystick();
@@ -47,7 +51,7 @@ int main(void) {
 void joystick_handler(unsigned int code) {
     printf("%d\n", code);
     if (code==28) {
-        if(STATE==1) {
+        if(STATE==1 || STATE==0) {
             STATE++;
         }
     }
@@ -55,10 +59,16 @@ void joystick_handler(unsigned int code) {
         if(STATE==0) {
             STATE++;
         }
+        if(STATE==2) {
+            THEME++;
+        }
     }
     if (code==108) {
         if(STATE==1) {
             STATE--;
+        }
+        if(STATE==2) {
+            THEME--;
         }
     }
     if (code==105) {
@@ -87,6 +97,32 @@ void SET_TIME_STATE(void) {
     draw_number(s2, -1, 4, BLUSH);
     draw_number(s1, 3, 4, BLUSH);
     usleep(25000);
+}
+
+void TIMER_COUNTS_DOWN(int theme) {
+     check_joystick(joystick_handler, 100);
+     if (theme==0)
+     {
+        clear_display();
+        //default theme (UDel babyyy)
+        display_colons(WHITE);
+        draw_number(m2, 0, 0, YELLOW);
+        draw_number(m1, 4, 0, YELLOW);
+        draw_number(s2, -1, 4, BLUE);
+        draw_number(s1, 3, 4, BLUE);
+     }
+     if (theme==1) 
+     {
+        clear_display();
+        //cherry blossom theme
+        display_colons(PINK);
+        draw_number(m2, 0, 0, BLUSH);
+        draw_number(m1, 4, 0, BLUSH);
+        draw_number(s2, -1, 4, WHITE);
+        draw_number(s1, 3, 4, WHITE);
+     }
+     s2--;
+     usleep(100000);
 }
 
 void handle_wrapping(void) {
