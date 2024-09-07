@@ -128,7 +128,6 @@ void draw_number(int number, int x, int y, int color) {
 	default:
         printf("number outside of range!");
     	}
-	printf("chosen number is %d\n", number);
 }
 
 void display_colons(int color) {
