@@ -1,4 +1,5 @@
 #include "timer.h"
+#include <time.h>
 //EVENT LOOP
 int STATE = 0, RUN = 1;
 int THEME = 0, STYLE = 0;
@@ -24,12 +25,16 @@ int THEME = 0, STYLE = 0;
 //TIME VALUES
 int m1 = 0, m2 = 0, s1 = 0, s2 = 0;
 
+//CLOCK VALUES
+int ticks = 0;
+
 void joystick_handler(unsigned int code);
 void handle_wrapping(void);
 void SET_TIME_STATE(void);
 void TIMER_ON_STATE(void);
 void TIMER_PAUSE_STATE(void);
 void TIMER_COUNTS_DOWN(int theme);
+void update_timer(void);
 
 int main(void) {
     open_display();
@@ -100,19 +105,12 @@ void SET_TIME_STATE(void) {
 }
 
 void TIMER_COUNTS_DOWN(int theme) {
+    check_joystick(joystick_handler, 1200);
      if (m1==0 && m2==0 && s1==0 && s2==0) {
-        check_joystick(joystick_handler, 1000);
-        clear_display();
-        usleep(100000);
-        display_colons(WHITE);
-        draw_number(m2, 0, 0, WHITE);
-        draw_number(m1, 4, 0, WHITE);
-        draw_number(s2, -1, 4, WHITE);
-        draw_number(s1, 3, 4, WHITE);
-        usleep(100000);
+        sleep(1);
+        STATE=0;
      }
      else {
-        check_joystick(joystick_handler, 1000);
         if (theme==0)
      {
         clear_display();
@@ -123,7 +121,7 @@ void TIMER_COUNTS_DOWN(int theme) {
         draw_number(s2, -1, 4, BLUE);
         draw_number(s1, 3, 4, BLUE);
      }
-     if (theme==1) 
+        if (theme==1) 
      {
         clear_display();
         //cherry blossom theme
@@ -133,11 +131,14 @@ void TIMER_COUNTS_DOWN(int theme) {
         draw_number(s2, -1, 4, WHITE);
         draw_number(s1, 3, 4, WHITE);
      }
-     if(s2!=0) { 
+    }
+    update_timer();
+}
+
+void update_timer() {
+    if (m1>0 || m2>0 || s1>0 || s2>0) {
         s2--;
-     }
-     usleep(100000);
-     }
+    }
 }
 
 void handle_wrapping(void) {
