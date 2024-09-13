@@ -2,6 +2,7 @@
 This study timer requires a Raspberry Pi 4 or above and the SenseHAT attachment. Required libraries are within the repository.
 
 This project is still in progress but currently has the base functionality! I will be adding "styles" (i.e. different ways to display the time) soon.
+
 **This may consist of display styles that are indicative of the time left, or something like LEDs on the SenseHAT array clearing one at a time.**
 
 # current functionality "flow"
