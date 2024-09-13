@@ -6,23 +6,24 @@ This study timer will use the Raspberry Pi, the SenseHAT, and senselib by Profes
 
 
 # how to compile
+Simply run Make All in the terminal!
 
 # how to run
+Either run ./timer in the terminal or Make run.
 
 # adjust time
-  up and down to adjust timer by the second.
-  left and right adjust timer by the minute.
-
-# confirm decisions (unnecessary when changing display modes)
-  click joystick in once.
+  Up and down on start up to adjust minutes
+  Right or click in on joystick to switch to seconds
+  You can go back to the minutes setting by pressing left on the joystick
+  Confirm decisions by clicking in on the joystick. You can also think of clicking in on the joystick as moving to the next state.
 
 # reset timer
-  double click joystick rapidly
+  Holding the joystick in while the timer is running will rapidly decrease the time. You can do this to bring the time down / close to 00:00.
 
 # change colors
-  while the timer is running, push joystick up/down to change color palette.
+  while the timer is running, push the joystick left/right to change color themes.
 
-# change style
-  while the timer is running, push joystick left/right to change visual mode.
+# change style (not yet implemented)
+  -while the timer is running, push joystick up/down to change visual mode.-
 
 
