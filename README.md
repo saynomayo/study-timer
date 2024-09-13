@@ -24,6 +24,6 @@ Either run ./timer in the terminal or Make run.
   while the timer is running, push the joystick left/right to change color themes.
 
 # change style (not yet implemented)
-  -while the timer is running, push joystick up/down to change visual mode.-
+  --while the timer is running, push joystick up/down to change visual mode.--
 
 
