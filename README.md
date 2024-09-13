@@ -1,12 +1,11 @@
 # study-timer
-This study timer will use the Raspberry Pi, the SenseHAT, and senselib by Professor Andrew Roosen of the University of Delaware.
+This study timer requires a Raspberry Pi 4 or above and the SenseHAT attachment. Required libraries are within the repository.
 
 # current functionality "flow"
    ![Screenshot 2024-09-03 000814](https://github.com/user-attachments/assets/4100abfd-41cc-4fdb-9b74-1dd3792294a8)
 
-
 # how to compile
-Simply run Make All in the terminal!
+Simply run Make All in the terminal! (must be in the same directory as the project)
 
 # how to run
 Either run ./timer in the terminal or Make run.
