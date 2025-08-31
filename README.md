@@ -15,9 +15,9 @@ Simply run Make All in the terminal! (must be in the same directory as the proje
 Either run ./timer in the terminal or Make run.
 
 # adjust time
-  Up and down on start up to adjust minutes
-  Right or click in on joystick to switch to seconds
-  You can go back to the minutes setting by pressing left on the joystick
+  Up and down on start up to adjust minutes,
+  Right or click in on joystick to switch to seconds.
+  You can go back to the minutes setting by pressing left on the joystick.
   Confirm decisions by clicking in on the joystick. You can also think of clicking in on the joystick as moving to the next state.
 
 # reset timer
